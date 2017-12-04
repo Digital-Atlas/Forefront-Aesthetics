@@ -107,7 +107,8 @@ header#masthead {
 		height: rem-calc(175);
 
 		.site-branding img {
-			width: 350px; // logo
+			min-height: 100px;
+			width: 250px; // logo
 			margin-top: 40px;
 			margin-left: 40px;
 		}
