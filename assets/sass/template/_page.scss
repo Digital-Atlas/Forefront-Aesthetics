@@ -1,0 +1,52 @@
+html, body {
+	height: 100%;	
+}
+
+.hide {
+	display: none;	
+}
+
+body {
+	background-color: $light-gray;
+	overflow-x: hidden;
+	
+}
+
+section {
+	@include grid-row();
+
+	margin-bottom: rem-calc(30);
+}
+
+.site-container {
+	background: $body-background;
+	width:100%;
+	max-width: $global-width;
+	margin: 0 auto;
+}
+
+.page-template-default,
+.error404 {
+	
+	.content {
+		padding-top: 0;	
+		padding-bottom: 30px;
+	}
+	
+	.entry-content {
+		
+		padding-top: 0;
+		margin-bottom: 0;
+		
+		> *:last-child {
+			margin-bottom: 0;	
+		}
+	}
+	
+	.entry-title {
+		
+	}
+	
+}
+
+

@@ -1,0 +1,159 @@
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
+
+
+// Default menu (active after a fresh WordPress install)
+.menu {
+	@include list-reset;
+
+	li {
+		margin: 0 10px 0 0;
+	} // li
+
+	ul {
+		@include list-reset;
+	} // ul
+
+	&.menu-horizontal {
+
+		li {
+			display: inline-block;
+		} // li
+	} // &.menu-horizontal
+
+	&.menu-vertical {
+
+		li {
+			margin: 0;
+		} // li
+
+		a {
+ 		} // a
+	} // &.menu-vertical
+
+	&.dropdown {
+
+		// Sub-menu
+		ul {
+			position: absolute;
+			top: 100%;
+			left: -9999px;
+			z-index: 99;
+			opacity: 0;
+
+			// Sub-sub menu
+			ul {
+				left: -9999px;
+				top: 0;
+			} // ul
+
+			// Sub-menu items
+			li {
+
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				} // &:hover > ul, &.focus > ul
+			} // li
+
+			// Sub-menu links
+			a {
+				 
+			} // a
+
+			&:hover > a,
+			.focus > a {
+				
+			} // &:hover > a, .focus > a
+
+			a:hover,
+			a.focus {
+				
+			} // a:hover, a.focus
+		} // ul
+
+		// Display sub-menu on hover
+		li:hover > ul,
+		.focus > ul {
+			left: auto;
+			opacity: 1;
+		} // li:hover > ul, .focus > ul
+
+		// Menu items
+		li {
+			float: left;
+			position: relative;
+
+			&:hover > a,
+			&.focus > a {
+			} // &:hover > a, &.focus > a
+		} // li
+	} // &.dropdown
+
+	// Menu hyperlinks
+	a {
+		display: block;
+		text-decoration: none;
+	} // a
+
+	// Current items
+	.current_page_item a,
+	.current-menu-item a {
+	} // .current_page_item a, .current-menu-item a
+} // .menu
+
+// Main navigation (after creating a menu in the dashboard)
+.main-navigation {
+	clear: both;
+	display: none;
+	float: left;
+
+	// Menu area
+	ul {
+		display: none;
+
+		@include breakpoint(large) {
+			display: block;  
+		}
+	
+	} // ul
+
+	&.toggled ul {
+		display: block;
+	} // &.toggled ul
+
+	@include breakpoint(large) {
+    	display: block;  
+	}
+} // .main-navigation
+
+// Small menu
+.menu-toggle {
+	display: block;
+
+    	 @include breakpoint(large) {
+	display: none;  
+	}
+	
+} // .menu-toggle
+
+// Navigation on Comment, Post and Posts
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0;
+		overflow: hidden;
+	} // .site-main &
+
+	&.nav-previous {
+		float: left;
+	} // &.nav-previous
+
+	&.nav-next {
+		float: right;
+		text-align: right;
+	} // &.nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation

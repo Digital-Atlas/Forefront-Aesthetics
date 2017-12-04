@@ -1,0 +1,146 @@
+// Mobile Navigation
+
+.menu-toggle,
+.sub-menu-toggle {
+	display: block;
+	visibility: visible;
+}
+.nav-primary,
+.nav-primary .sub-menu {
+	width: 100%;
+	display: none;
+ }
+.nav-primary {
+	background: #000;
+	padding: 0;
+	
+	.columns {
+		padding: 0;
+	}
+}
+.menu-toggle {
+	display: block;
+	background: none;
+	padding: 0;
+	text-indent: 9999px;
+	color: transparent;
+	width: 30px;
+	position: absolute;
+	top: 51px; 
+ 	right: 20px;
+	outline: none;
+	border: none;
+	
+	@media #{$medium-up} {
+    	top: 55px;  
+	}
+	
+	@media #{$large-up} {
+        top: 56px;  
+	}
+	
+	
+	&.activated {
+		top: 56px;
+		
+		@media #{$medium-up} {
+      		top: 58px;
+		}
+		
+		@media #{$large-up} {
+      		top: 59px;
+		}
+	}
+}
+.header-image .menu-toggle {
+	margin-top: 12px;
+}
+.menu-toggle .line {
+	background: #fff;
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 3px;
+	margin-bottom: 5px;
+}
+.menu-toggle.activated .line {
+	transform: rotate(45deg);
+	top: -3px;
+	&:nth-child(2) {
+		transform: rotate(-45deg);
+		top: 5px;
+	}
+	&:last-child {
+		display: none;
+	}
+}
+.sub-menu-toggle {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: transparent;
+	padding: 9px 4px;
+	outline: none;
+	border: none;
+}
+.sub-menu-toggle:before {
+	content: "\f055";
+	color: #fff;
+	font-family: 'fontAwesome';
+	font-size: 16px;
+	padding: 8px;
+	cursor: pointer;
+}
+.sub-menu-toggle.activated::before {
+	content: "\f056";
+}
+.nav-primary  li {
+	list-style-type: none;
+	width: 100%;
+	position: relative;
+	border-top: 1px solid darken($green, 10%);
+	
+	a {
+		color: $white;	
+		padding: 10px 20px;
+	}
+	
+	&:hover,
+	&.current-menu-item,
+	&.current_page_parent,
+	&.current-page-ancestor,
+	&.current-menu-ancestor,
+	&.current-menu-parent,
+	&.current-category-ancestor {
+
+		> a {
+ 			color: $white;
+			background-color: darken($green, 10%);
+		}
+	}
+}
+.nav-primary .menu > li:first-child {
+	border: none;
+}
+.nav-primary .menu li .sub-menu {
+	margin: 0;
+	li {
+		padding-left: 24px;
+	}
+}
+.nav-primary .menu a {
+	font-size: 14px;
+	margin: 0;
+	padding: 10px 20px;
+	display: block;
+	text-transform: uppercase;
+}
+
+
+@media #{$xlarge-up} {
+ 	.menu-toggle,
+	.sub-menu-toggle {
+		display: none;
+		visibility: hidden;
+	}     
+}

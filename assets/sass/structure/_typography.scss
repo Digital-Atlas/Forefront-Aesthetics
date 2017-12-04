@@ -1,0 +1,148 @@
+// Typography
+
+body {
+	font-family: $paragraph-font-family;
+	font-style: $paragraph-font-style;
+	font-weight: $paragraph-font-weight;
+	font-size: $paragraph-font-size;  
+	color: $paragraph-font-color;
+	-webkit-font-smoothing: antialiased;
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(14);
+	}
+}
+
+
+hr {
+	height: 1px;
+	background: #cecece;
+	border: none;
+	margin-bottom: 22px;	
+}
+
+
+a {
+	text-decoration: none;
+}
+
+p.no-margin {
+	margin-bottom: 0!important;	
+}
+
+// Links
+a {
+	color: $anchor-color;
+ 	outline: none!important;	
+	
+	&:focus {
+		outline: none!important;	
+	}
+
+	&:visited {
+		color: $anchor-color;
+	} // &:visited
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $anchor-color-hover;
+	} // &:hover, &:focus, &:active
+} // a
+
+strong {
+	font-weight: 700;	
+}
+		
+/* Headings
+--------------------------------------------- */	
+		
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $header-color;
+	font-family: $header-font-family;
+	font-weight: 700;
+	margin-bottom: 19px;
+ 	
+	a {
+		color: $anchor-color;	
+	}
+	
+}
+
+
+// Heading sizes
+@each $size, $headers in $header-sizes {
+	@include breakpoint($size) {
+		@each $header, $font-size in $headers {
+			#{$header} {
+			  font-size: rem-calc($font-size);
+			}
+		}
+	}
+}
+
+// Heading Line Heights
+
+h1 {
+	line-height: (52/48); 
+}
+
+h2 {
+	line-height: (40/36); 
+  }
+
+h3 {
+	line-height: (36/32);
+}
+
+h4 {
+	line-height: (28/20); 
+}
+
+h5 {
+	line-height: (28/20);
+}
+
+h6 {
+	line-height: (28/20);
+}
+
+.entry-content {
+
+	a {
+		color: $anchor-color;
+		text-decoration: none;
+			
+		&:hover {
+			color: $anchor-color-hover;
+		}
+	}
+	
+	p, li {
+		line-height: $paragraph-line-height;
+		margin-bottom: $paragraph-margin-bottom;	
+	}
+	
+	ul:not([class]),
+	ol:not([class]) {
+		
+		margin-left: 40px;
+		list-style-position: outside;
+		
+		li {
+			padding: 0 0 5px 0;
+			margin-bottom: 0;
+		}
+	}
+	
+		
+	ol li {
+		list-style-type: decimal;
+	}
+	
+}

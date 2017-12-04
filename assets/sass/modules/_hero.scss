@@ -1,0 +1,168 @@
+.page-builder .section-hero {
+	
+	padding: 0;
+	margin: 0 auto;	
+	background-color: rgba(#FFF, .62);
+	background-repeat: no-repeat;
+	background-size: cover;
+		
+	position: relative;
+ 	overflow: hidden;
+	
+	
+	
+	&:before {
+		content: '';
+		display: block;
+ 		
+		@media #{$medium-up} {
+      		min-height: 250px;
+		}
+		
+		@media #{$large-up} {
+      		min-height: 250px;
+		}
+	}
+	
+	&:after {
+		content: '';
+		display: block;	
+	}
+		
+	.section-wrapper {
+		
+		position: relative;
+		top: 0; 
+		bottom: 0; 
+		left: 0; 
+		right: 0;
+		z-index: 2;
+		
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-repeat: no-repeat;
+			background-image: url();
+			background-position: right center;
+			background-size: 100%;
+			
+			@media #{$medium-up} {
+      			background-size: contain!important;
+			}	
+		}
+		
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		@media #{$medium-up} {
+			position: absolute;
+		}
+		
+		.section-container {
+			width: 100%;
+			padding: 40px 0;
+			
+ 			position: relative;
+			z-index: 3;	
+ 			
+			@media #{$large-up} {
+      			padding: 0;
+			}	
+		}
+					
+	}
+	
+	
+	
+	.section-container {
+		
+		> * {
+			color: #fff;
+			text-align: center;
+		}
+		
+		h1 {
+	 		color: #fff;
+		}
+		
+		h3 {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			
+			@media #{$large-up} {
+      			font-size: 22px;
+			}	
+		}
+		
+		.entry-content {
+			padding-top: 19px;
+			max-width: 600px;
+		}
+		
+		.entry-content, .entry-footer {
+				
+			> p:last-of-type, > ul:last-of-type {
+				//margin-bottom: 0;	
+			}
+			
+		}
+		
+		p {			
+			color: #fff;
+			line-height: (28/22);
+			
+			@media #{$large-up} {
+      			font-size: 22px;
+				
+			}
+ 		}
+		
+				
+	}
+	
+	&.fixed-width {
+		
+		.row {
+			margin: 0;
+				
+		}
+		
+		.section-header,
+		.entry-content {
+			@media only screen and (min-width : 775px) {
+				max-width: 775px;
+				margin: 0 auto;
+ 			}
+		}
+	}
+	
+	&.text-left {
+		
+		.section-header,
+		.entry-content {
+			margin: 0;
+			@media #{$medium-up} {
+      			text-align: left!important;
+			}
+		}
+	}
+	
+	.entry-content, .entry-footer {
+				
+		> p:last-child, > ul:last-child {
+			margin-bottom: 0;	
+		}
+		
+	}
+			
+}
+

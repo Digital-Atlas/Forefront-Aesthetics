@@ -1,0 +1,64 @@
+// widgets
+
+.footer-widgets .widget-title {
+	//@extend %screen-reader-text;
+}
+
+.widget_dpe_fp_widget ul,
+.widget_nav_menu ul {
+	@include list-reset;
+}
+
+.share-icons {
+
+	margin-left: 0!important;
+
+	&:before {
+		content: 'Share ';	
+		display: inline-block;
+		font-size: 18px;
+		padding-right: 12px;
+		
+		@media only screen and (max-width : 639px) {
+			display: none;
+		}
+	}
+	
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin: 0 0 0 15px;
+		
+		&:first-child {
+			margin-left: 0;	
+		}
+		
+		a {
+			
+		}
+		
+	}
+	
+}
+
+.social-icons {
+
+	ul {
+		@include list-reset;	
+	}
+	
+	li {
+ 		display: inline-block;
+		margin: 0 0 0 15px;
+		
+		&:first-child {
+			margin-left: 0;	
+		}
+		
+		a {
+			
+		}
+		
+	}
+	
+}
