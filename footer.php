@@ -17,7 +17,7 @@
 				<ul>
 
 					<li>
-						<img src="<?php echo get_template_directory_uri();?>/assets/images/logo-footer.png" alt="Forefront Aesthetics" />
+						<!-- <img src="<?php echo get_template_directory_uri();?>/assets/images/logo.png" alt="Forefront Aesthetics" />-->
 					</li>
 
 
